@@ -1,0 +1,119 @@
+/* HEADER */
+header {
+    background: white;
+    padding: 15px 0;
+    border-bottom: 1px solid #E0E0E0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.branding {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    height: 45px;
+}
+
+.site-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+/* TOPBAR */
+.topbar {
+    background: white;
+    padding: 12px 20px;
+    border-bottom: 1px solid #E0E0E0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: var(--border-radius);
+    transition: all 0.3s ease;
+}
+
+.nav-links ul li a:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+/* TABLE */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+th, td {
+    padding: 14px;
+    text-align: center;
+    font-size: 16px;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+th {
+    background: var(--secondary-color);
+    color: white;
+    font-weight: 600;
+}
+
+td input {
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
+    outline: none;
+}
+
+td input:focus {
+    border-color: var(--accent-color);
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .topbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    table {
+        font-size: 14px;
+    }
+}

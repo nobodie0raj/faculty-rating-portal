@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --accent-color: #f5a623;
+      --secondary-color: #1e1e1e;
+      --background-color: #f4f6f8;
+      --border-radius: 10px;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Satoshi Regular', sans-serif;
+    }
+
+    .sidebar {
+      width: 250px;
+      background: var(--secondary-color);
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar h2 {
+  margin: 0 0 20px 0;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #f5f5f5;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  margin: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  font-size: 15px;
+  position: relative;
+}
+
+.sidebar a.active {
+  background-color: var(--accent-color);
+  color: #000;
+  font-weight: bold;
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+    .sidebar a:hover {
+      background: var(--accent-color);
+    }
+    .sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: var(--accent-color);
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+    padding: 15px;
+  }
+
+  .sidebar h2 {
+    font-size: 20px;
+  }
+
+  .sidebar a {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+}
+    .main-content {
+      flex-grow: 1;
+      padding: 20px;
+      background: var(--background-color);
+      overflow-y: auto;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      padding: 15px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 10px 15px;
+      background: var(--accent-color);
+      font-family: 'Satoshi Regular';
+      color: white;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #da6f04;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+    }
+
+    .subject-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    .subject-table th,
+    .subject-table td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+      font-size: 15px;
+    }
+
+    .subject-table th {
+      background-color: #544f4f;
+    }
+
+    .status-badge {
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: bold;
+      color: white;
+    }
+
+    .good { background: #4caf50; }
+    .average { background: #ff9800; }
+    .poor { background: #f44336; }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2><i class="fas fa-user-shield"></i> Admin Panel</h2>
+  
+    <a href="#dashboard">
+      <i class="fas fa-tachometer-alt"></i> Dashboard
+    </a>
+  
+    <a href="#manage-reviews">
+      <i class="fas fa-star-half-alt"></i> Manage Reviews
+    </a>
+  
+    <a href="#manage-faculty">
+      <i class="fas fa-chalkboard-teacher"></i> Manage Faculty
+    </a>
+  
+    <a href="#settings">
+      <i class="fas fa-cog"></i> Settings
+    </a>
+  
+    <a href="#" id="logoutBtn">
+        <i class="fas fa-sign-out-alt"></i> Logout
+      </a>
+      
+  </div>
+  
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="header">
+      <h1>Dashboard - CSE 6th Sem</h1>
+      <button class="btn">+ Add New Faculty</button>
+    </div>
+
+    <!-- Recent Reviews -->
+    <div class="card">
+      <h2>Recent Reviews</h2>
+      <table class="subject-table">
+        <thead>
+          <tr>
+            <th>Subject</th>
+            <th>Faculty</th>
+            <th>Avg. Rating</th>
+            <th>Reviews</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Machine Learning Algorithms</td>
+            <td>Dr. Mangala Madankar</td>
+            <td>4.6</td>
+            <td>112</td>
+            <td><span class="status-badge good">Excellent</span></td>
+          </tr>
+          <tr>
+            <td>Statistical Techniques</td>
+            <td>Atiya Khan</td>
+            <td>3.9</td>
+            <td>108</td>
+            <td><span class="status-badge average">Average</span></td>
+          </tr>
+          <tr>
+            <td>Unstructured DBMS</td>
+            <td>Rahul Moriwar</td>
+            <td>4.2</td>
+            <td>105</td>
+            <td><span class="status-badge good">Good</span></td>
+          </tr>
+          <tr>
+            <td>Natural Language Processing</td>
+            <td>Aditya Turankar</td>
+            <td>4.4</td>
+            <td>110</td>
+            <td><span class="status-badge good">Very Good</span></td>
+          </tr>
+          <tr>
+            <td>Universal Human Values</td>
+            <td>Mrunali Dhone</td>
+            <td>4.0</td>
+            <td>102</td>
+            <td><span class="status-badge good">Good</span></td>
+          </tr>
+          <tr>
+            <td>Open Elective</td>
+            <td>Various</td>
+            <td>3.6</td>
+            <td>96</td>
+            <td><span class="status-badge average">Moderate</span></td>
+          </tr>
+          <tr>
+            <td>Humanities Elective</td>
+            <td>Various</td>
+            <td>3.8</td>
+            <td>90</td>
+            <td><span class="status-badge average">Average</span></td>
+          </tr>
+          <tr>
+            <td>Campus Recruitment Training</td>
+            <td>CRT </td>
+            <td>4.1</td>
+            <td>120</td>
+            <td><span class="status-badge good">Good</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+<script> 
+
+  document.getElementById("logoutBtn").addEventListener("click", function (e) {
+    e.preventDefault();
+
+    // Optionally clear session data (simulate logout)
+    localStorage.clear();  // if you're using localStorage
+    sessionStorage.clear(); // if you're using sessionStorage
+
+    // Optional alert (can be removed)
+    alert("You have been logged out successfully!");
+
+    // Redirect to login or home page
+    window.location.href = "index.html"; // Change to "login.html" if needed
+  });
+</script>
+
+
+
+</body>
+</html>

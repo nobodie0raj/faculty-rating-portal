@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add New Faculty</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    :root {
+      --accent-color: #f5a623;
+      --secondary-color: #1e1e1e;
+      --background-color: #f4f6f8;
+      --border-radius: 10px;
+    }
+
+    body {
+      display: flex;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Satoshi Regular', sans-serif;
+    }
+
+    .sidebar {
+      width: 250px;
+      background: var(--secondary-color);
+      color: white;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+
+    .sidebar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      margin: 10px 0;
+      display: block;
+      border-radius: var(--border-radius);
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background: var(--accent-color);
+    }
+
+    .main-content {
+      flex-grow: 1;
+      padding: 20px;
+      background: var(--background-color);
+      overflow-y: auto;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      padding: 15px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: var(--border-radius);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .card h2 {
+      margin-top: 0;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      border-radius: var(--border-radius);
+      border: 1px solid #ccc;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background: var(--accent-color);
+      font-family: 'Satoshi Regular';
+      color: white;
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background: #da6f04;
+    }
+
+    .success-message {
+      background-color: #d4edda;
+      color: #155724;
+      padding: 10px 15px;
+      border-radius: var(--border-radius);
+      margin-top: 15px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h2>Admin Panel</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="#">Manage Reviews</a>
+    <a href="#">Manage Faculty</a>
+    <a href="#">Settings</a>
+    <a href="#">Logout</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="header">
+      <h1>Add New Faculty</h1>
+    </div>
+
+    <div class="card">
+      <h2>Faculty Details</h2>
+      <form id="addFacultyForm">
+        <div class="form-group">
+          <label for="facultyName">Faculty Name</label>
+          <input type="text" id="facultyName" name="facultyName" required />
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" required />
+        </div>
+        <div class="form-group">
+          <label for="department">Department</label>
+          <select id="department" name="department">
+            <option value="CSE">Computer Science</option>
+            <option value="IT">Information Tech</option>
+            <option value="ENTC">ENTC</option>
+            <option value="EEE">EEE</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="semester">Semester</label>
+          <select id="semester" name="semester">
+            <option value="4">4th Sem</option>
+            <option value="5">5th Sem</option>
+            <option value="6">6th Sem</option>
+          </select>
+        </div>
+        <button class="btn" type="submit">Add Faculty</button>
+        <div class="success-message" id="successMessage">Faculty added successfully!</div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Fake success message logic
+    const form = document.getElementById("addFacultyForm");
+    const successMessage = document.getElementById("successMessage");
+
+    form.addEventListener("submit", function(e) {
+      e.preventDefault();
+      successMessage.style.display = "block";
+      setTimeout(() => {
+        successMessage.style.display = "none";
+        form.reset();
+      }, 2500);
+    });
+  </script>
+</body>
+</html>

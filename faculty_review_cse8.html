@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Review</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="ghrce_logo.png" alt="GHRCE Logo" class="logo">
+        </div>
+        <h1>Faculty Review Portal</h1>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="#">Review</a></li>
+                <li><a href="help.html">Help</a></li>
+                <li><a href="/login.html">Admin Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <div class="container">
+       
+        <p>Select a subject and rate your faculty based on different criteria.</p>
+
+        <form id="reviewForm">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Faculty</th>
+                        <th>Teaching</th>
+                        <th>Test Discussion</th>
+                        <th>Doubt Solving</th>
+                        <th>Availability</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Machine Learning Algorithms</td>
+                        <td>Dr. Mangala Madankar</td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                    </tr>
+                    <tr>
+                        <td>Statistical Techniques</td>
+                        <td>Atiya Khan</td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                    </tr>
+                    <tr>
+                        <td>Unstructured Database Management</td>
+                        <td>Rahul Moriwar</td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                    </tr>
+                    <tr>
+                        <td>Natural Language Processing</td>
+                        <td>Aditya Turankar</td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                    </tr>
+                    <tr>
+                        <td>Universal Human Values</td>
+                        <td>Mrunali Dhone</td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                    </tr>
+                    <tr>
+                        <td>Open Elective</td>
+                        <td>OE</td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                    </tr>
+                    <tr>
+                        <td>Humanities Elective</td>
+                        <td>HE</td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                    </tr>
+                    <tr>
+                        <td>Campus Recruitment Training</td>
+                        <td>CRT</td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                        <td><input type="number" min="1" max="5"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="submit" class="btn">Submit Review</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 GHRCE. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+    <script src="/script_review.js"></script>
+</body>
+</html>

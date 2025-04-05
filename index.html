@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHRCE Faculty Review Portal</title>
+   
+    <link rel="icon" href="ghrce_logo.png" type="image/png">
+    <style>
+    @font-face {
+    font-family: 'Satoshi Regular';
+    font-style: normal;
+    src: url('/fonts/Satoshi-Regular.woff') format('woff');
+}
+
+:root {
+    --primary-color: #1E1E1E;
+    --secondary-color: #3A3A3A;
+    --accent-color: #F5A623;
+    --background-color: #F8F9FA;
+    --text-color: #1E1E1E;
+    --border-radius: 10px;
+}
+
+body {
+    font-family: 'Satoshi Regular', sans-serif;
+    background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    height: 60px;
+}
+
+/* Navbar */
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    margin: 0 15px;
+    position: relative;
+}
+
+.nav-links a:hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+    transform: scaleX(1);
+}
+
+/* Container */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+/* Card */
+.welcome-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    max-width: 550px;
+}
+
+/* Form */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Dropdown */
+.custom-select {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 15px;
+    border: 1px solid #d1d1d1;
+    border-radius: var(--border-radius);
+    background: white;
+    appearance: none;
+}
+
+/* Button */
+.btn {
+    background: var(--accent-color);
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    transition: background 0.3s, transform 0.2s;
+    cursor: pointer;
+    border: none;
+}
+
+.btn:hover {
+    background: #e88e00;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #f5f5f5;
+    color: #333;
+    border-top: 1px solid #ddd;
+}
+
+/* Media Queries */
+@media (max-width: 1023px) {
+    .header-container {
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .header-container h1 {
+        font-size: 22px;
+        margin: 10px 0;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links a {
+        margin: 8px;
+        font-size: 14px;
+    }
+
+    .welcome-card {
+        width: 90%;
+        padding: 25px;
+    }
+
+    .custom-select {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .btn {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .header-container {
+        padding: 15px 20px;
+    }
+
+    .logo {
+        height: 50px;
+        margin-bottom: 10px;
+    }
+
+
+
+    .header-container h1 {
+        font-size: 18px;
+    }
+
+    .nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0;
+    padding: 4px 8px;
+    position: relative;
+}
+
+    .container {
+        padding: 20px 10px;
+    }
+
+    .welcome-card {
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .form-group {
+        margin-bottom: 12px;
+    }
+
+    .custom-select {
+        font-size: 13px;
+        padding: 9px 10px;
+    }
+
+    .btn {
+        font-size: 14px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .welcome-card {
+        max-width: 550px;
+    }
+
+    .custom-select {
+        font-size: 15px;
+    }
+
+    .btn {
+        font-size: 16px;
+    }
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 0;
+    padding: 4px 8px;
+    position: relative;
+}
+
+</style>
+</style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="header-container">
+            <img src="ghrce_logo.png" alt="GHRCE Logo" class="logo">
+            <h1>GHRCE FACULTY REVIEW PORTAL</h1>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#">Review</a>
+                <a href="help.html">Help</a>
+                <a href="/login.html">Admin Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <div class="container">
+        <div class="welcome-card">
+            <p>Help us improve education by sharing your valuable feedback.</p>
+            <form id="selectionForm">
+                <div class="form-group">
+                    <label for="semester"></label>
+                    <div class="custom-dropdown">
+                        <select id="semester" class="custom-select">
+                            <option value="">Select Semester</option>
+                            <option value="2">2nd Semester</option> 
+                            <option value="4">4th Semester</option>
+                            <option value="6">6th Semester</option>
+                            <option value="8">8th Semester</option>
+                        </select>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label for="department"></label>
+                    <div class="custom-dropdown">
+                        <select id="department" class="custom-select">
+                            <option value="">Select Department</option>
+                            <option value="cse">Computer Science</option>
+                            <option value="it">Information Technology</option>
+                            <option value="ece">Electronics & Communication</option>
+                            <option value="mech">Mechanical</option>
+                        </select>
+                    </div>
+                </div>
+            
+                <button type="submit" class="btn"> Proceed</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 GHRCE. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

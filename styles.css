@@ -1,0 +1,263 @@
+/* ================================
+   📦 Font Imports (Satoshi)
+   ================================ */
+   @font-face {
+    font-family: 'Satoshi Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Satoshi Regular'), url('/fonts/Satoshi-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Satoshi Italic';
+    font-style: italic;
+    font-weight: normal;
+    src: local('Satoshi Italic'), url('/fonts/Satoshi-Italic.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Satoshi Light';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Satoshi Light'), url('/fonts/Satoshi-Light.woff') format('woff');
+}
+
+/* ================================
+   🌐 Global Reset & Variables
+   ================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #1E1E1E;
+    --secondary-color: #3A3A3A;
+    --accent-color: #F5A623;
+    --background-color: #F8F9FA;
+    --text-color: #1E1E1E;
+    --muted-text: #707070;
+    --border-radius: 10px;
+}
+
+/* ================================
+   🧍 Base Styles
+   ================================ */
+body {
+    font-family: 'Satoshi Regular', sans-serif;
+    background: var(--background-color);
+    color: var(--text-color);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* ================================
+   📐 Layout Containers
+   ================================ */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+/* ================================
+   🔥 Header Section
+   ================================ */
+   
+.logo {
+    height: 60px;
+
+    
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    margin: 0 15px;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background-color: #ff9900;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+}
+}
+
+.card {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    padding: 20px;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+  
+}
+
+header {
+    
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 50px;
+        background: #fff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+.logo {
+    height: 60px;
+}
+
+
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links ul li {
+    display: inline;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.nav-links ul li a:hover {
+    background-color: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ================================
+   📱 Mobile Responsive Nav
+   ================================ */
+ /* Mobile Responsive */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links ul li a {
+        width: 100%;
+    }
+
+    input[type="number"] {
+        width: 40px;
+        font-size: 14px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 16px;
+    }
+}
+
+/* ================================
+   📊 Table Styling
+   ================================ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #E0E0E0;
+}
+
+th {
+    background: var(--secondary-color);
+    color: white;
+    font-weight: 600;
+}
+
+/* ================================
+   🔢 Form Elements (Inputs & Selects)
+   ================================ */
+input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #E0E0E0;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #E0E0E0;
+    border-radius: var(--border-radius);
+    font-family: 'Satoshi Regular';
+    font-size: 16px;
+    background: white;
+    color: var(--text-color);
+    appearance: none;
+    cursor: pointer;
+}
+
+/* ================================
+   🟧 Button Styling
+   ================================ */
+button {
+    background: var(--accent-color);
+    color: white;
+    margin-top: 5px;
+    padding: 10px 15px;
+    align-content: center;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background: #e5941c;
+}
+
+/* ================================
+   🧷 Footer Styling
+   ================================ */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #f8f9fa;
+    font-size: 14px;
+}
